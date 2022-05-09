@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>Tic Tac Toe Game</h1>
+  <div class="wrapper">
+    <div class="players" *ngIf="!gameStarted">
+      <form [formGroup]="playersForm" (ngSubmit)="startGame()">
+        <div class="player" formGroupName="playerX">
+          <label for="">Player X name</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <div class="player mt-1" formGroupName="playerO">
+          <label for="">Player O name</label>
+          <input type="text" formControlName="name" />
+        </div>
+
+        <button
+          [disabled]="!playersForm.valid"
+          class="btn btn-primary w-100 mt-1"
+        >
+          Start game
+        </button>
+      </form>
+    </div>
+
+    <div class="game" *ngIf="gameStarted">
+      <div class="squares">
+        <div class="rows" *ngFor="let rows of squares | chunk: 3; index as i">
+          <div class="square" *ngFor="let square of rows; index as j">
+            <app-square
+              [index]="i * 3 + j"
+              (squareClicked)="onSquareClicked($event)"
+              >{{ square }}</app-square
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="game-info">
+          <h4>
+            You : player <span>{{ currentPlayer.name }}</span>
+          </h4>
+        </div>
+        <div>
+          <ng-container *ngIf="winner">
+            <h4>Player {{ currentPlayer.name }} has won the game</h4>
+          </ng-container>
+          <ng-container *ngIf="!winner && !gameFinished">
+            <h4>
+              Turn : Player <span>{{ currentPlayer.turn }}</span>
+            </h4>
+          </ng-container>
+          <ng-container *ngIf="gameFinished && !winner">
+            <h4>Game draw</h4>
+          </ng-container>
+        </div>
+      </div>
+      <button class="btn btn-warning w-100" (click)="resetGame()">
+        Reset Game
+      </button>
+    </div>
+  </div>
+</div>

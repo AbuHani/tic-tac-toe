@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  padding: 1rem;
+  h1 {
+    text-align: center;
+  }
+  .wrapper {
+    margin: 1rem auto;
+    width: 42%;
+  }
+  .squares {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .rows {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    .game-info {
+      margin-bottom: 2rem;
+    }
+    h4 span {
+      font-weight: bold;
+      color: green;
+      text-transform: capitalize;
+    }
+  }
+}
