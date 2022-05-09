@@ -1,6 +1,19 @@
 # TicTackToe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+![](tick-tac-toe.gif)
+
+<a href="https://abuhani.github.io/tic-tac-toe/" target="_blank">Tic Tac Toe Demo</a>
+
+Tic Tac Toe using Angular framework. 
+
+- Visual representation of the board
+- Clicking on an empty tile adds an X or O depending on the turn.
+- Should get the name of the players before starting the game.
+- A display saying the name of whose turn it is.
+- If there's a winner, a display of the winner’s name.
+- If there's a winner, clicking on an empty tile should do nothing.
+- A reset button resets the game.
+- <a href="https://abuhani.github.io/tic-tac-toe/" target="_blank">Demo</a>
 
 ## Development server
 
