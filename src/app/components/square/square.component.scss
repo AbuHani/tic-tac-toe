@@ -3,10 +3,11 @@
     width: 70px;
     height: 70px;
     margin: 5px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
-    font-size: 35px;
-    color: #5c513e;
+    font-size: 2rem;
   }
 }
